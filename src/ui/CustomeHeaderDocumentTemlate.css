@@ -45,6 +45,13 @@
     width: 100%;
 }
 
+/* Ensure content is offset by header/footer heights so it doesn't get overlaid */
+.se-document-layout-widget .content,
+.document-layout-widget .content {
+    padding-top: var(--header-height, 0);
+    padding-bottom: var(--footer-height, 0);
+}
+
 .se-document-layout-widget .footer,
 .document-layout-widget .footer {
     position: fixed;

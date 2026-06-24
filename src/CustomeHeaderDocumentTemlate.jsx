@@ -5,6 +5,11 @@ export function CustomeHeaderDocumentTemlate(props) {
 
     const className = ["se-document-layout-widget", "document-layout-widget", props.class].filter(Boolean).join(" ");
 
+    const rootStyle = {
+        "--header-height": headerHeight + "px",
+        "--footer-height": footerHeight + "px"
+    };
+
     // Created based on this blog post:
     // https://medium.com/@Idan_Co/the-ultimate-print-html-template-with-header-footer-568f415f6d2a
 
@@ -24,7 +29,7 @@ export function CustomeHeaderDocumentTemlate(props) {
     };
 
     return (
-        <div className={className}>
+        <div className={className} style={rootStyle}>
             <table className="layout-table">
                 {(headerFooter === "header" || headerFooter === "both") && (
                     <thead>
