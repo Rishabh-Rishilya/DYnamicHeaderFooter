@@ -1,0 +1,57 @@
+.se-document-layout-widget {
+    --se-document-accent: #00ffb9;
+    --se-document-ink: #111827;
+    --se-document-line: #d7dde3;
+    --se-document-surface: #ffffff;
+    color: var(--se-document-ink);
+    box-sizing: border-box;
+}
+
+.se-document-layout-widget *,
+.se-document-layout-widget *::before,
+.se-document-layout-widget *::after {
+    box-sizing: inherit;
+}
+
+.se-document-layout-widget .header,
+.document-layout-widget .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--se-document-surface);
+    border-bottom: 2px solid var(--se-document-accent);
+    box-shadow: inset 0 -1px 0 var(--se-document-line);
+    padding: 12px 18px;
+}
+
+.se-document-layout-widget .layout-table,
+.document-layout-widget .layout-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.se-document-layout-widget .layout-table > thead,
+.document-layout-widget .layout-table > thead {
+    break-inside: avoid;
+}
+
+.se-document-layout-widget .layout-table > tfoot,
+.document-layout-widget .layout-table > tfoot {
+    break-inside: avoid;
+}
+
+.se-document-layout-widget .content,
+.document-layout-widget .content {
+    width: 100%;
+}
+
+.se-document-layout-widget .footer,
+.document-layout-widget .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: var(--se-document-surface);
+    border-top: 2px solid var(--se-document-accent);
+    box-shadow: inset 0 1px 0 var(--se-document-line);
+    padding: 10px 18px;
+}
