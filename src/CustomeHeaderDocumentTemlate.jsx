@@ -14,16 +14,7 @@ export function CustomeHeaderDocumentTemlate(props) {
     // https://medium.com/@Idan_Co/the-ultimate-print-html-template-with-header-footer-568f415f6d2a
 
     // General idea is to use a table because the header and footer of a table will be repeated on every page.
-    // However, the table footer on the last page will be shown directly underneath the content.
-    // So a combination is used: A table to reserve space but not render any content.
-    // Render content in the reserved space using position fixed.
-    // Without reserving space using the table, the contents would overflow the header and footer.
-
-    // The header/footer style only contains the height value.
-    const headerStyle = {
-        height: headerHeight + "px"
-    };
-
+    // The body is rendered in the table body after the header row, so it cannot overlap the header area.
     const footerStyle = {
         height: footerHeight + "px"
     };
@@ -35,9 +26,7 @@ export function CustomeHeaderDocumentTemlate(props) {
                     <thead>
                         <tr>
                             <td>
-                                <div className="header-space" style={headerStyle}>
-                                    &nbsp;
-                                </div>
+                                <div className="header-content">{headerContent}</div>
                             </td>
                         </tr>
                     </thead>
@@ -53,19 +42,12 @@ export function CustomeHeaderDocumentTemlate(props) {
                     <tfoot>
                         <tr>
                             <td>
-                                <div className="footer-space" style={footerStyle}>
-                                    &nbsp;
-                                </div>
+                                <div className="footer-space" style={footerStyle} />
                             </td>
                         </tr>
                     </tfoot>
                 )}
             </table>
-            {(headerFooter === "header" || headerFooter === "both") && (
-                <div className="header" style={headerStyle}>
-                    {headerContent}
-                </div>
-            )}
             {(headerFooter === "footer" || headerFooter === "both") && (
                 <div className="footer" style={footerStyle}>
                     {footerContent}
