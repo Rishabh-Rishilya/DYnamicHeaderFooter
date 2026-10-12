@@ -1,7 +1,7 @@
 {
   "name": "customeheaderdocumenttemlate",
   "widgetName": "CustomeHeaderDocumentTemlate",
-  "version": "1.4.2",
+  "version": "1.4.4",
   "description": "Repeats configured header and footer content on every generated PDF page.",
   "copyright": "2026 Siemens Energy",
   "author": "Siemens Energy",
@@ -43,3 +43,4 @@
     "@types/react-dom": "19.0.0"
   }
 }
+
